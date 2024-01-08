@@ -1,13 +1,42 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+html {
+     font-size: 62.5%;
+}
+
+@media only screen and (max-width: 94em) {
+     html {
+          font-size: 52.5%;
+     }
+}
+
+@media only screen and (max-width: 66em) {
+     body::-webkit-scrollbar {
+          display: none;
+     }
+}
+
+@font-face {
+     font-family: "trtBold";
+     src: local("trtBold"), url("./fonts/TRTBold.ttf");
+}
+
+@font-face {
+     font-family: "TRTLight";
+     src: local("TRTLight"), url("./fonts/TRTLight.ttf");
+}
+
+@font-face {
+     font-family: "TRTMedium";
+     src: local("TRTMedium"), url("./fonts/TRTMedium.ttf");
+}
+
+@font-face {
+     font-family: "TRTRegular";
+     src: local("TRTRegular"), url("./fonts/TRTRegular.ttf");
 }

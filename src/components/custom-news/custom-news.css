@@ -1,0 +1,105 @@
+.custom-container {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     margin-top: 7rem;
+     gap: 1.6rem;
+     padding: 4.5rem 0;
+     background-color: #edf2f7;
+}
+
+.custom-internal-container {
+     display: flex;
+     flex-direction: column;
+     max-width: 140rem;
+     margin: 0 7.5%;
+     gap: 3.2rem;
+     align-self: center;
+}
+
+.custom-section-heading {
+     color: #005d99;
+     font-family: "TRTBold";
+     font-size: 2rem;
+     font-weight: 500;
+     line-height: 3.2rem;
+     letter-spacing: 0.2rem;
+     text-transform: uppercase;
+}
+
+.custom-items-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: stretch;
+}
+
+.custom-img {
+     width: 100%;
+}
+
+.custom-topic-link {
+     text-decoration: none;
+     width: 23%;
+     background-color: #fff;
+     transition: all 0.3s;
+}
+
+.custom-news-time {
+     color: #a0a5aa;
+     font-family: "TRTRegular";
+     font-size: 1.2rem;
+     font-weight: 400;
+     line-height: 1.6rem;
+     letter-spacing: 0.1rem;
+     text-transform: uppercase;
+     padding: 1.6rem;
+}
+
+.custom-news-heading {
+     padding: 0 1.6rem 1.6rem 1.6rem;
+     color: #000;
+     font-family: "Noto Serif";
+     font-size: 2rem;
+     font-weight: 700;
+     line-height: 2.8rem;
+}
+
+@media only screen and (max-width: 75em) {
+     .custom-items-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6rem;
+     }
+
+     .custom-topic-link {
+          width: 100%;
+     }
+}
+
+@media only screen and (max-width: 66em) {
+     .custom-internal-container {
+          width: 60%;
+     }
+
+     .custom-news-heading {
+          font-size: 1.8rem;
+     }
+}
+
+@media only screen and (max-width:49em) {
+     .custom-items-container {
+          grid-template-columns: 1fr;
+     }
+}
+
+@media only screen and (max-width:49em) {
+     .custom-internal-container {
+          width: 75%;
+     }
+}
+
+@media only screen and (max-width:38em) {
+     .custom-internal-container {
+          width: 90%;
+     }
+}

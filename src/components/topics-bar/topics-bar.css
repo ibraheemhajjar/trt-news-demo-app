@@ -1,0 +1,44 @@
+.topics-bar-container {
+     display: flex;
+     align-items: center;
+     justify-self: flex-start;
+     width: 80.5%;
+     max-width: 140rem;
+     margin-left: 5rem;
+}
+
+.topics-bar {
+     display: flex;
+     align-items: stretch;
+     width: 100%;
+     padding: 3.2rem 0;
+     line-height: 1.6rem;
+     font-family: "TRTRegular";
+     font-size: 1.2rem;
+     font-weight: 400;
+     letter-spacing: 0.1rem;
+     text-transform: uppercase;
+     gap: 4.8rem;
+}
+
+.topics {
+     color: #22262a;
+     font-weight: 700;
+}
+
+.topic-item {
+     text-decoration: none;
+     color: #22262a;
+     font-weight: 550;
+}
+
+@media only screen and (max-width: 66em) {
+     .topics-bar-container {
+          display: none;
+     }
+}
+
+.active {
+     color: #0089cc;
+     font-weight: 700;
+}

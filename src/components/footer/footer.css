@@ -1,0 +1,48 @@
+.footer-container {
+     width: 100%;
+     background-color: #000000;
+}
+
+.footer {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 85%;
+     max-width: 140rem;
+     background-color: #000000;
+     margin: auto;
+}
+
+.copyright {
+     color: white;
+     text-align: center;
+     margin-right: 40%;
+     font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 66em) {
+     .footer {
+          width: 60%;
+     }
+
+     .copyright {
+          margin-right: 37%;
+     }
+}
+
+@media only screen and (max-width:49em) {
+     .footer {
+          width: 75%;
+     }
+}
+
+@media only screen and (max-width:38em) {
+     .footer {
+          width: 90%;
+     }
+
+     .copyright {
+          font-size: 1.2rem;
+          margin-right: 10%;
+     }
+}

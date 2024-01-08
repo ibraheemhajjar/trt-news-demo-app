@@ -1,0 +1,55 @@
+.hero-news-container {
+     display: inline-block;
+     position: relative;
+     text-decoration: none;
+     transition: all 0.3s;
+}
+
+.news-tag {
+     position: absolute;
+     top: 1.6rem;
+     left: 1.6rem;
+     font-family: "trtRegular";
+     color: #fff;
+     background-color: #005d99;
+     font-size: 1.4rem;
+     font-weight: 700;
+     line-height: 2rem;
+     letter-spacing: 0.1rem;
+     text-transform: uppercase;
+     padding: 0.6rem 0.8rem;
+}
+
+.hero-img {
+     display: inline-block;
+     width: 100%;
+}
+
+.hero-heading {
+     color: #000;
+     font-family: "Noto Serif", serif;
+     font-size: 4rem;
+     font-weight: 700;
+     line-height: 5.2rem;
+     letter-spacing: -0.1rem;
+     text-transform: capitalize;
+     margin-top: 3.2rem;
+}
+
+@media only screen and (max-width: 66em) {
+     .hero-heading {
+          font-size: 3.2rem;
+          margin-top: 2.2rem;
+     }
+}
+
+@media only screen and (max-width: 34em) {
+     .hero-heading {
+          font-size: 2.4rem;
+          line-height: 4rem;
+     }
+
+     .hero-heading {
+          margin-top: 1.8rem;
+     }
+}

@@ -1,0 +1,243 @@
+.search-grand-container {
+     width: 100%;
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1;
+}
+
+/* ------------- search bar ------------------------ */
+
+.search-bar-extensible-container {
+     width: 100%;
+     background-color: #000000;
+}
+
+.search-bar-container {
+     height: 20rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 2rem;
+     background-color: #000000;
+     color: white;
+     max-width: 140rem;
+     margin: 0 auto;
+}
+
+.icon-search {
+     color: #00aaff;
+     scale: 2.3;
+}
+
+.search-input-container {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border-bottom: 1px solid #00aaff;
+     width: 75%;
+     z-index: 150;
+}
+
+.search-input {
+     background-color: black;
+     width: 95%;
+     color: white;
+     border: none;
+     caret-color: #0089cc;
+     font-size: 3rem;
+     padding: 1.2rem;
+     font-family: "TRTRegular";
+}
+
+.search-input:focus {
+     outline: none;
+}
+
+
+.search-loading-container {
+     margin-right: 2rem;
+}
+
+/* ------------- results division ------------------------ */
+
+.search-results-extensible-container {
+     width: 100%;
+     background-color: #ffffff;
+     height: calc(100vh - 20rem);
+}
+
+.search-results-outer-container {
+     max-width: 140rem;
+     margin: 0 auto;
+     padding-bottom: 100rem;
+}
+
+.no-results {
+     font-size: 3rem;
+     position: fixed;
+     top: 30%;
+     left: 50%;
+     transform: translate(-50%, 0);
+     font-family: "TRTRegular";
+
+}
+
+.search-results-inner-container {
+     width: 65%;
+     margin: 0 auto;
+     overflow: auto;
+     height: calc(100vh - 20rem);
+}
+
+.result-item-container {
+     width: 100%;
+     display: flex;
+     gap: 1rem;
+     padding: 1.5rem 0;
+     text-decoration: none;
+     color: #000000;
+     border-bottom: 1px solid #e1e6eb;
+}
+
+.result-item-container:last-child {
+     margin-bottom: 10rem;
+}
+
+.result-img-container {
+     width: 15%;
+}
+
+.result-item-image {
+     width: 100%;
+}
+
+.result-text-container {
+     padding: 0.3rem 0;
+     width: 85%;
+     text-decoration: none;
+     display: flex;
+     flex-direction: column;
+}
+
+.result-heading {
+     font-family: "Noto Serif";
+     font-size: 1.8rem;
+}
+
+.result-description {
+     font-family: "Noto Serif";
+     font-size: 1.3rem;
+
+}
+
+.result-publish-time {
+     color: #0089cc;
+     font-family: "Noto Serif";
+     font-size: 1rem;
+     margin-top: auto;
+}
+
+/* ----------------- media queries ------------------------ */
+@media only screen and (max-width:75em) {
+     .search-results-inner-container {
+          width: 85%;
+     }
+}
+
+@media only screen and (max-width:66em) {
+     .search-bar-container {
+          width: 60%;
+          height: 15rem;
+          padding-top: 3rem;
+     }
+
+     .search-results-extensible-container {
+          height: calc(100vh - 15rem);
+     }
+
+     .result-description {
+          display: none;
+     }
+
+     .result-img-container {
+          width: 25%;
+     }
+
+     .result-text-container {
+          width: 75%;
+     }
+
+     .search-results-inner-container {
+          width: 60%;
+     }
+}
+
+@media only screen and (max-width:49em) {
+
+     .search-bar-container {
+          width: 75%;
+     }
+
+     .search-results-inner-container {
+          width: 75%;
+     }
+}
+
+@media only screen and (max-width:38em) {
+
+     .search-bar-container {
+          width: 100%;
+          padding-left: 4rem;
+          padding-right: 4rem;
+     }
+
+     .search-input-container {
+          width: 100%;
+     }
+
+     .search-results-inner-container {
+          width: 95%;
+     }
+
+     .search-input {
+          font-size: 2rem;
+     }
+
+     .icon-search {
+          scale: 1.8;
+     }
+
+     .no-results {
+          font-size: 2rem;
+     }
+
+}
+
+@media only screen and (max-width:32em) {
+     .result-heading {
+          font-size: 1.5rem;
+     }
+}
+
+@media only screen and (max-width:27em) {
+     .result-heading {
+          font-size: 1.4rem;
+     }
+
+     .result-publish-time {
+          font-size: 0.9rem;
+     }
+}
+
+@media only screen and (max-width:22em) {
+     .result-heading {
+          font-size: 1.2rem;
+     }
+
+     .result-publish-time {
+          font-size: 0.7rem;
+     }
+
+}
