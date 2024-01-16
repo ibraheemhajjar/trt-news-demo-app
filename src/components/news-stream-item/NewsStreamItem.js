@@ -43,6 +43,10 @@ const NewsStreamItem = (props) => {
                          />
                     </div>
                }
+               <div className="load-btn-container">
+                    {!props.endOfResults && !props.isScrollLoading && <button className="load-btn" onClick={props.loadMoreHandler}>Load More</button>}
+                    {props.endOfResults && <p className="end-of-results">End of Results</p>}
+               </div>
           </div>
      );
 };

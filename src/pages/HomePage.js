@@ -26,14 +26,16 @@ const HomePage = () => {
      const [isScrollLoading, setIsScrollLoading] = useState(false);
 
      const [currentPage, setCurrentPage] = useState(1);
-     const itemsPerPage = 20;
+     const [endOfResults, setEndOfResults] = useState(false);
+     const itemsPerPage = 15;
 
      const { category } = useParams();
      const location = useLocation();
 
      useEffect(() => {
           window.scrollTo(0, 0);
-          setCurrentPage(1)
+          setCurrentPage(1);
+          setEndOfResults(false);
      }, [location]);
 
      useEffect(() => {
@@ -70,42 +72,32 @@ const HomePage = () => {
           }
      }, [category]);
 
-     useEffect(() => {
-          window.addEventListener("scroll", scrollHandler);
-          return () => {
-               window.removeEventListener("scroll", scrollHandler);
+     const loadMoreHandler = () => {
+
+          let startIndex = currentPage * itemsPerPage;
+          let endIndex = startIndex + itemsPerPage;
+          if (news.activeNewsData?.length === news.newsData?.length) {
+               setEndOfResults(true)
+               return;
           }
-     });
-
-     const scrollHandler = () => {
-          const scrollHeight = document.documentElement.scrollHeight;
-          const scrollTop = document.documentElement.scrollTop;
-          const innerHeight = window.innerHeight;
-
-          if (scrollTop + innerHeight + 1 >= scrollHeight) {
-               let startIndex = currentPage * itemsPerPage;
-               let endIndex = startIndex + itemsPerPage;
-               if (news.activeNewsData?.length === news.newsData?.length) {
-                    return;
-               }
-               if ((news.activeNewsData?.length + itemsPerPage) > news.newsData?.length) {
-                    endIndex = undefined;
-               }
-               setIsScrollLoading(true);
-
-               setTimeout(() => {
-                    setCurrentPage(prevState => prevState + 1);
-                    setNews(prevState => {
-                         const newNewsPatch = prevState.newsData.slice(startIndex, endIndex);
-                         const newActiveNewsData = prevState.activeNewsData.concat(newNewsPatch);
-                         return {
-                              ...prevState,
-                              activeNewsData: newActiveNewsData
-                         }
-                    });
-                    setIsScrollLoading(false)
-               }, 1000)
+          if ((news.activeNewsData?.length + itemsPerPage) > news.newsData?.length) {
+               endIndex = undefined;
           }
+          setIsScrollLoading(true);
+
+          setTimeout(() => {
+               setCurrentPage(prevState => prevState + 1);
+               setNews(prevState => {
+                    const newNewsPatch = prevState.newsData.slice(startIndex, endIndex);
+                    const newActiveNewsData = prevState.activeNewsData.concat(newNewsPatch);
+                    return {
+                         ...prevState,
+                         activeNewsData: newActiveNewsData
+                    }
+               });
+               setIsScrollLoading(false)
+          }, 1000)
+
      }
 
      return (
@@ -135,7 +127,7 @@ const HomePage = () => {
                     <CustomNews />
                     <div className="body-container custom-top-margin">
                          <div className="stream-section-container">
-                              <NewsStreamItem isScrollLoading={isScrollLoading} data={news?.activeNewsData} />
+                              <NewsStreamItem isScrollLoading={isScrollLoading} loadMoreHandler={loadMoreHandler} endOfResults={endOfResults} data={news?.activeNewsData} />
                               <div className="vertical-separator"></div>
                               <Link to={"https://www.trtworldforum.com/"} target="_blank" className="forum-istanbul-container hover-action">
                                    <h3 className="forum-istanbul-heading">trt world forum 2023</h3>

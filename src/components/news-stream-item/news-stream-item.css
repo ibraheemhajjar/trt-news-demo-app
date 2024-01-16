@@ -74,6 +74,33 @@
      display: none;
 }
 
+.load-btn-container {
+     display: flex;
+     justify-content: center;
+}
+
+.load-btn {
+     padding: 1.5rem 5rem;
+     background-color: #000000;
+     color: #ffffff;
+     font-family: "Noto Serif";
+
+     font-size: 1.7rem;
+     font-weight: 600;
+     border-radius: 0.5rem;
+     border: none;
+}
+
+.load-btn:hover {
+     cursor: pointer;
+     opacity: 0.8;
+}
+
+.end-of-results {
+     font-size: 2rem;
+     font-family: "Noto Serif";
+}
+
 
 @media only screen and (max-width: 66em) {
      .news-stream-container {
