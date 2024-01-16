@@ -14,7 +14,6 @@ import forumImage from "../images/Rectangle 3.jpg";
 import forumLogo from "../images/106c8f506074a02db16635754b1cb39c.png";
 import { NEWS_CATEGORIES_IDS } from "../constants/index";
 import MoonLoader from "react-spinners/MoonLoader";
-import BeatLoader from "react-spinners/BeatLoader";
 
 const HomePage = () => {
 
@@ -57,6 +56,7 @@ const HomePage = () => {
                          newsData: sortedNews,
                          activeNewsData: sortedNews?.slice(0, itemsPerPage)
                     });
+                    window.scrollTo(0, 0);
                     setIsLoading(false);
                } catch (error) {
                     console.log(error);
@@ -135,7 +135,7 @@ const HomePage = () => {
                     <CustomNews />
                     <div className="body-container custom-top-margin">
                          <div className="stream-section-container">
-                              <NewsStreamItem data={news?.activeNewsData} />
+                              <NewsStreamItem isScrollLoading={isScrollLoading} data={news?.activeNewsData} />
                               <div className="vertical-separator"></div>
                               <Link to={"https://www.trtworldforum.com/"} target="_blank" className="forum-istanbul-container hover-action">
                                    <h3 className="forum-istanbul-heading">trt world forum 2023</h3>
@@ -144,14 +144,6 @@ const HomePage = () => {
                                    <img className="forum-logo" src={forumLogo} alt="forum logo" />
                               </Link>
                          </div>
-                         {isScrollLoading &&
-                              <div className="scroll-spinner-container">
-                                   <BeatLoader
-                                        color="#0089cc"
-                                        size={15}
-                                   />
-                              </div>
-                         }
                     </div>
                </main>}
                {isLoading &&

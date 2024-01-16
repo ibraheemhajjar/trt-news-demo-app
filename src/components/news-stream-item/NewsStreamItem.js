@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./news-stream-item.css";
 import { Link } from "react-router-dom";
+import BeatLoader from "react-spinners/BeatLoader";
+
 import { calculatePublishTime } from "../../helpers/calculatePublishTime";
 
 const NewsStreamItem = (props) => {
@@ -33,6 +35,14 @@ const NewsStreamItem = (props) => {
                          </div>
                     );
                })}
+               {props.isScrollLoading &&
+                    <div className="scroll-spinner-container">
+                         <BeatLoader
+                              color="#0089cc"
+                              size={15}
+                         />
+                    </div>
+               }
           </div>
      );
 };
