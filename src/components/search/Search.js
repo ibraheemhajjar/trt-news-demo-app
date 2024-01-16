@@ -13,6 +13,7 @@ const Search = () => {
      const [loadingSearch, setLoadingSearch] = useState(false);
      const [searchResult, setSearchResult] = useState([]);
      const [noResult, setNoResult] = useState(false);
+     const [showPopup, setShowPopup] = useState(false);
 
      const isInitialRender = useRef(true);
 
@@ -21,6 +22,13 @@ const Search = () => {
           setSearchResult([])
           setSearchInput(newSearchInput);
           setNoResult(false);
+     }
+
+     const handleInputFocus = () => {
+          setShowPopup(true);
+          setTimeout(() => {
+               setShowPopup(false);
+          }, 3000);
      }
 
      useEffect(() => {
@@ -58,7 +66,7 @@ const Search = () => {
                     <div className='search-bar-container'>
                          <SearchIcon className="icon-search" />
                          <div className="search-input-container">
-                              <input type="text" className="search-input" placeholder="Search For NEWS" onChange={handleSearchInputChange} />
+                              <input type="text" className="search-input" onFocus={handleInputFocus} placeholder="Search For NEWS" onChange={handleSearchInputChange} />
                               {loadingSearch &&
                                    <div className="search-loading-container">
                                         <ClipLoader
@@ -67,6 +75,7 @@ const Search = () => {
                                         />
                                    </div>
                               }
+                              {showPopup && <div className="search-popup">Title or Description, at Least 3 Characters </div>}
                          </div>
                     </div>
                </div>

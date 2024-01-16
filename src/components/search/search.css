@@ -38,6 +38,7 @@
      border-bottom: 1px solid #00aaff;
      width: 75%;
      z-index: 150;
+     position: relative;
 }
 
 .search-input {
@@ -58,6 +59,18 @@
 
 .search-loading-container {
      margin-right: 2rem;
+}
+
+.search-popup {
+     background-color: #00aaff;
+     color: #000000;
+     position: absolute;
+     top: -30%;
+     left: 0%;
+     font-size: 1.5rem;
+     padding: 0.3rem 1rem;
+     border-radius: 0.4rem;
+     font-family: "Noto Serif";
 }
 
 /* ------------- results division ------------------------ */
@@ -172,6 +185,13 @@
      .search-results-inner-container {
           width: 60%;
      }
+
+     .search-popup {
+          top: -15%;
+          left: 0%;
+          font-size: 1.2rem;
+     }
+
 }
 
 @media only screen and (max-width:49em) {
@@ -212,6 +232,12 @@
      .no-results {
           font-size: 2rem;
      }
+
+     .search-popup {
+          top: -25%;
+          left: 0%;
+     }
+
 
 }
 
