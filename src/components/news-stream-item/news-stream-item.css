@@ -84,7 +84,6 @@
      background-color: #000000;
      color: #ffffff;
      font-family: "Noto Serif";
-
      font-size: 1.7rem;
      font-weight: 600;
      border-radius: 0.5rem;
@@ -97,8 +96,10 @@
 }
 
 .end-of-results {
-     font-size: 2rem;
+     font-size: 1.7rem;
      font-family: "Noto Serif";
+     font-weight: 600;
+     padding: 1.5rem 5rem;
 }
 
 
