@@ -9,7 +9,7 @@ const CustomNews = () => {
 
      const fetchCustomNews = async () => {
           try {
-               let url = `https://gifted-clam-waistcoat.cyclic.app/CustomNews?showByLine=true`;
+               let url = `https://trt-news-backend-demo.vercel.app/CustomNews?showByLine=true`;
                const response = await fetch(url);
                const newsFeed = await response.json();
                setCustomNews(newsFeed.data);

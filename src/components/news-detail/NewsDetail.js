@@ -23,7 +23,7 @@ const NewsDetail = () => {
           setIsLoading(true);
           const fetchNews = async (myCategory, myNewsId) => {
                try {
-                    let url = `https://gifted-clam-waistcoat.cyclic.app/${myCategory}/${myNewsId}`;
+                    let url = `https://trt-news-backend-demo.vercel.app/${myCategory}/${myNewsId}`;
                     const response = await fetch(url);
                     const newsFeed = await response.json();
                     setNewsDetail(newsFeed?.data);
